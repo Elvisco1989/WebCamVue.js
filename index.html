@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container mt-5">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="newWebcam.Id" placeholder="Enter id">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" v-model="newWebcam.Brand" placeholder="Enter Brand">
+            </div>
+
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="newWebcam.Height" placeholder="Enter Height">
+
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="newWebcam.Width" placeholder="Enter Width">
+
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" @click="Addwebcam()">Add</button>
+        </div>
+
+
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="TargetId" placeholder="Enter id">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-danger" @click=" DeleteWencam()">Delete</button>
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="TargetId" placeholder="Enter id">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" v-model="newWebcam.Brand" placeholder="Enter Brand">
+            </div>
+
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="newWebcam.Height" placeholder="Enter Height">
+
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control" v-model="newWebcam.Width" placeholder="Enter Width">
+
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" @click="UpdateWencam()">Update</button>
+        </div>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                    <th>Height</th>
+                    <th>width</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="web in WebCamObj" :key="web.Id">
+                    <td>{{web.Id}}</td>
+                    <td>{{web.Brand}}</td>
+                    <td>{{web.Height}}</td>
+                    <td>{{web.Width}}</td>
+                </tr>
+            </tbody>
+
+            <script src="index.js"></script>
+
+    </div>
+
+
+</body>
+
+</html>
